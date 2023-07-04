@@ -23,4 +23,11 @@ export class AppService {
     console.log(value);
   
   }
+  
+
+  async publishMessage(channel: string, message: string): Promise<void> {
+    await this.redisClient.publish(channel, message);
+  }
+
+  
 }
